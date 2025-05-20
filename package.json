@@ -1,0 +1,11 @@
+{
+  "name": "api-restaurante",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "Davi Lorena",
+  "license": "ISC",
+  "description": "API para gerenciar pedidos das mesas de um restaurante"
+}
