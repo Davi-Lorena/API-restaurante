@@ -1,4 +1,6 @@
 import { NextFunction, Request, Response } from "express"
+import { knex } from "@/database/knex"
+
 import { z } from "zod"
 
 class ProductController {
@@ -20,7 +22,10 @@ price: z.number().gt(0),
 
      const { name, price } =bodySchema.parse(request.body)
 
-    return response.status(201).json({ name, price })
+     // Generic -> Não precisou ser importado pois o arquivo de tipagem só contém tipos primitivos (o que o deixa disponível globalmente)
+await knex<ProductRepository>("products").insert({ name, price })
+
+    return response.status(201).json()
     
 } catch (error) {
     next(error)
