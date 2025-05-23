@@ -29,6 +29,19 @@ await knex<TablesSessionsRepository>("tables_sessions").insert({
     next(error)
 }
     }
+
+    async index(request: Request, response: Response, next: NextFunction) {
+try {
+
+    // Select omitido novamente.
+    const sessions = await knex<TablesSessionsRepository>("tables_sessions").orderBy("closed_at")
+    
+    return response.json(sessions)
+} catch (error) {
+    next(error)
+}
+    }
+
 }
 
 export { TablesSessionsController }
