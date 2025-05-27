@@ -6,5 +6,6 @@ const ordersController = new OrdersController()
 
 
 ordersRoutes.post("/", ordersController.create)
+ordersRoutes.get("/table-session/:table_sessions_id", ordersController.index)
 
 export { ordersRoutes }
