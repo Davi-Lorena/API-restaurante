@@ -58,6 +58,19 @@ async index(request: Request, response: Response, next: NextFunction) {
     }
 }
 
+async show(request: Request, response: Response, next: NextFunction){
+    try {
+
+const { table_sessions_id } = request.params
+
+const order = await knex("orders").select(knex.raw("COALESCE(SUM(orders.price * orders.quantity), 0) AS total")).where({ table_sessions_id }).first()
+
+        return response.json(order)
+    } catch (error) {
+        next(error)
+    }
+}
+
 }
 
 export { OrdersController }
