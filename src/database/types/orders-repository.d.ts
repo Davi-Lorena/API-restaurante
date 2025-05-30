@@ -1,3 +1,5 @@
+// Arquivos com .d.ts de extensão representam tipos que serão utilizados para as colunas de tabelas via knex
+// Tipagem criada para as ordens
 type OrderRepository = {
     id: number,
     table_sessions_id: number, 

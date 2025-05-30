@@ -1,16 +1,20 @@
 { 
     "compilerOptions": {
+        // Nas linhas abaixo definimos as respectuvas versões a serem utilizadas do ECMA SCRIPT 
         "target": "ES2022",
         "lib": ["ES2023"],
         
+        // O caminho do nosso arquivo principal: "@/*" = qualquer arquivo partindo da raiz que tiver *: ["./src/*] -> O * aqui entende diretamente que é o primeiro arquivo (No caso da raiz da pasta src) encontrado (server.ts)
         "paths": {
             "@/*": ["./src/*"]
         },
 
+        // Configurações adicionais para se trabalhar com nodejs (por padrão, o typescript não faz isso)
         "module": "node16",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
 
+        // Configurações para o uso estrito e exato do TS 
         "strict": true,
         "skipLibCheck": true
 }
